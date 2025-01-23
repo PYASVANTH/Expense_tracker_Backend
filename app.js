@@ -40,9 +40,9 @@ const PORT = 8000;
 //     res.json('Hellooooo World');
 // });
 
-const mongourl = "mongodb://127.0.0.1:27017/practise";      
+const mongourl = "mongodb+srv://yasvanthp2023it:yasvanth12345@cluster0.icjtm.mongodb.net/tracker";      
 
-const expenseSchema = new mongoose.Schema({
+const expenseSchema = new mongoose.Schema({ 
     id: { type: String, required: true, unique: true },
     title: { type: String, required: true },
     amount: { type: Number, required: true },
@@ -88,7 +88,7 @@ app.get("/api/expenses/:index", async (req, res) => {
 //     const expenses = await expenseModel.find({ id });
 //     res.status(200).json(expenses);
 // });
-
+ 
 app.put("/api/expenses/:id", async (req, res) => { 
     try {
         console.log(req.params);
